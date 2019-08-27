@@ -10,3 +10,7 @@ LOVE_CONFIG = {
     resizable = false,
     vsync = true
 }
+
+MESSAGE = "Pawng!"
+
+PADDLE_SPEED = 200
