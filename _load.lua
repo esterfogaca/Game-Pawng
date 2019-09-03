@@ -1,6 +1,8 @@
 function love.load()
     love.graphics.setDefaultFilter('nearest', 'nearest')
 
+    love.window.setTitle('Pawng')
+
     math.randomseed(os.time()) 
 
     smallFont = love.graphics.newFont("assets/fonts/font.ttf", FONT_SIZE)
@@ -18,14 +20,10 @@ function love.load()
     player1Score = 0
     player2Score = 0
 
-    player1Y = 30
-    player2Y = VIRTUAL_HEIGHT - 50
+    player1 = Paddle(10, 30, 5, 20)
+    player2 = Paddle(VIRTUAL_WIDTH - 10, VIRTUAL_HEIGHT - 30, 5, 20)
 
-    ballX = VIRTUAL_WIDTH / 2 - 2
-    ballY = VIRTUAL_HEIGHT / 2 - 2
+    ball = Ball(VIRTUAL_WIDTH / 2 - 2, VIRTUAL_HEIGHT / 2 - 2, 4)
 
-    ballDX = math.random(2) == 1 and 100 or - 100
-    ballDY = math.random(-50, 50) * 1.5
-
-    gameState = 'play'
+    gameState = 'start'
 end 

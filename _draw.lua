@@ -16,12 +16,20 @@ function love.draw()
         love.graphics.setFont(scoreFont)
         love.graphics.print(tostring(player1Score), VIRTUAL_WIDTH / 2 - 50, 10)
         love.graphics.print(tostring(player2Score), VIRTUAL_WIDTH / 2 + 30, 10)
-        
-        love.graphics.circle("fill", ballX, ballY, 4)
+
+        ball:render()
     end
 
-    love.graphics.rectangle("fill", 10, player1Y, 5, 20)
-    love.graphics.rectangle("fill", VIRTUAL_WIDTH - 10, player2Y, 5, 20)
+    player1:render()
+    player2:render()
+
+    --displayFPS()
 
     push:apply('end')
+end
+
+function displayFPS()
+    love.graphics.setFont(smallFont)
+    love.graphics.setColor(0, 255, 0, 1)
+    love.graphics.print('FPS: ' .. tostring(love.timer.getFPS()), 10, 10)
 end
