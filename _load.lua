@@ -5,7 +5,8 @@ function love.load()
 
     math.randomseed(os.time()) 
 
-    smallFont = love.graphics.newFont("assets/fonts/font.ttf", FONT_SIZE)
+    smallFont = love.graphics.newFont("assets/fonts/font.ttf", FONT_SIZE) 
+    largeFont = love.graphics.newFont("assets/fonts/font.ttf", FONT_SIZE * 2)
     love.graphics.setFont(smallFont)
 
     scoreFont = love.graphics.newFont("assets/fonts/font.ttf", FONT_SIZE * 2)
@@ -19,6 +20,7 @@ function love.load()
 
     player1Score = 0
     player2Score = 0
+    servingPlayer = 1
 
     player1 = Paddle(10, 30, 5, 20)
     player2 = Paddle(VIRTUAL_WIDTH - 10, VIRTUAL_HEIGHT - 30, 5, 20)
