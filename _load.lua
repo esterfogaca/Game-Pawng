@@ -11,6 +11,12 @@ function love.load()
 
     scoreFont = love.graphics.newFont("assets/fonts/font.ttf", FONT_SIZE * 2)
 
+    sounds = {
+        ['score'] = love.audio.newSource('assets/sounds/score.wav', 'static'),
+        ['hit'] = love.audio.newSource('assets/sounds/hit.wav', 'static'),
+        ['goal'] = love.audio.newSource('assets/sounds/goal.wav', 'static')
+    }
+
     push:setupScreen(
         VIRTUAL_WIDTH,
         VIRTUAL_HEIGHT,
@@ -29,3 +35,7 @@ function love.load()
 
     gameState = 'start'
 end 
+
+function love.resize(w, h)
+    push:resize(w, h)
+end

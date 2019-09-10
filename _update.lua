@@ -61,6 +61,9 @@ function love.update(dt)
             else
                 ball.dy = math.random(10, 150)
             end
+
+            sounds['hit']:play()
+
         end
 
         if ball:collides(player2) then
@@ -71,16 +74,21 @@ function love.update(dt)
             else
                 ball.dy = math.random(10, 150)
             end
+
+            sounds['hit']:play()
+
         end
 
         if ball.y <= 0 then
             ball.y = 0
             ball.dy = -ball.dy
+            sounds['hit']:play()
         end
 
         if ball.y >= VIRTUAL_HEIGHT - ball.size then
             ball.y = VIRTUAL_HEIGHT - ball.size
             ball.dy = -ball.dy
+            sounds['hit']:play()
         end
 
         if ball.x < 0 then
@@ -93,6 +101,9 @@ function love.update(dt)
                 gameState = 'serve'
                 ball:reset()
             end
+
+            sounds['goal']:play()
+
         end
 
         if ball.x > VIRTUAL_WIDTH then
@@ -105,6 +116,9 @@ function love.update(dt)
                 gameState = 'serve'
                 ball:reset()
             end
+
+            sounds['goal']:play()
+
         end
 
        ball:update(dt)

@@ -7,7 +7,7 @@ FONT_SIZE = 16
 
 LOVE_CONFIG = {
     fullscreen = false,
-    resizable = false,
+    resizable = true,
     vsync = true
 }
 
